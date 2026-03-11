@@ -1,0 +1,125 @@
+{
+	"type": "struct",
+	"fields": [
+		{
+			"name": "id",
+			"type": "long",
+			"nullable": true,
+			"metadata": {}
+		},
+		{
+			"name": "date_time",
+			"type": "string",
+			"nullable": true,
+			"metadata": {}
+		},
+		{
+			"name": "site_name",
+			"type": "integer",
+			"nullable": true,
+			"metadata": {}
+		},
+		{
+			"name": "posa_continent",
+			"type": "integer",
+			"nullable": true,
+			"metadata": {}
+		},
+		{
+			"name": "user_location_country",
+			"type": "integer",
+			"nullable": true,
+			"metadata": {}
+		},
+		{
+			"name": "user_location_region",
+			"type": "integer",
+			"nullable": true,
+			"metadata": {}
+		},
+		{
+			"name": "user_location_city",
+			"type": "integer",
+			"nullable": true,
+			"metadata": {}
+		},
+		{
+			"name": "orig_destination_distance",
+			"type": "double",
+			"nullable": true,
+			"metadata": {}
+		},
+		{
+			"name": "user_id",
+			"type": "integer",
+			"nullable": true,
+			"metadata": {}
+		},
+		{
+			"name": "is_mobile",
+			"type": "integer",
+			"nullable": true,
+			"metadata": {}
+		},
+		{
+			"name": "is_package",
+			"type": "integer",
+			"nullable": true,
+			"metadata": {}
+		},
+		{
+			"name": "channel",
+			"type": "integer",
+			"nullable": true,
+			"metadata": {}
+		},
+		{
+			"name": "srch_ci",
+			"type": "string",
+			"nullable": true,
+			"metadata": {}
+		},
+		{
+			"name": "srch_co",
+			"type": "string",
+			"nullable": true,
+			"metadata": {}
+		},
+		{
+			"name": "srch_adults_cnt",
+			"type": "integer",
+			"nullable": true,
+			"metadata": {}
+		},
+		{
+			"name": "srch_children_cnt",
+			"type": "integer",
+			"nullable": true,
+			"metadata": {}
+		},
+		{
+			"name": "srch_rm_cnt",
+			"type": "integer",
+			"nullable": true,
+			"metadata": {}
+		},
+		{
+			"name": "srch_destination_id",
+			"type": "integer",
+			"nullable": true,
+			"metadata": {}
+		},
+		{
+			"name": "srch_destination_type_id",
+			"type": "integer",
+			"nullable": true,
+			"metadata": {}
+		},
+		{
+			"name": "hotel_id",
+			"type": "long",
+			"nullable": true,
+			"metadata": {}
+		}
+	]
+}
