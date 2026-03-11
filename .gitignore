@@ -45,3 +45,6 @@ override.tf.json
 # Ignore CLI configuration files
 .terraformrc
 terraform.rc
+/python_libs/build/
+/python_libs/dbr_py_utils.egg-info/
+/python_libs/dist/
