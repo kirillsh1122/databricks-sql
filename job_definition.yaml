@@ -1,0 +1,57 @@
+resources:
+  jobs:
+    Hotel_Statistics_Job:
+      name: Hotel Statistics Job
+      email_notifications:
+        on_failure:
+          - kiryl_shapialevich@epam.com
+        no_alert_for_skipped_runs: true
+      notification_settings:
+        no_alert_for_skipped_runs: true
+        no_alert_for_canceled_runs: true
+      tasks:
+        - task_key: 01_create_metadata
+          notebook_task:
+            notebook_path: /Workspace/Users/kiryl_shapialevich@epam.com/databricks-sql/notebooks/01_create_metadata
+            source: WORKSPACE
+          existing_cluster_id: xxxx-xxxx52-xxxxxqq
+        - task_key: 02_load_bronze_data
+          depends_on:
+            - task_key: 01_create_metadata
+          spark_jar_task:
+            jar_uri: ""
+            main_class_name: com.databricksaux.wrapper.BronzeLoaderWrapper
+            run_as_repl: true
+          existing_cluster_id: xxxx-xxxx52-xxxxxqq
+          libraries:
+            - jar: /Workspace/Shared/databricksaux-1.0.0.jar
+            - maven:
+                coordinates: com.databricks:databricks-dbutils-scala_2.12:0.1.5
+        - task_key: 03_bronze_to_silver
+          depends_on:
+            - task_key: 02_load_bronze_data
+          notebook_task:
+            notebook_path: /Workspace/Users/kiryl_shapialevich@epam.com/databricks-sql/notebooks/03_bronze_to_silver
+            source: WORKSPACE
+          existing_cluster_id: xxxx-xxxx52-xxxxxqq
+        - task_key: 04_silver_to_gold
+          depends_on:
+            - task_key: 03_bronze_to_silver
+          notebook_task:
+            notebook_path: /Workspace/Users/kiryl_shapialevich@epam.com/databricks-sql/notebooks/04_silver_to_gold
+            source: WORKSPACE
+          existing_cluster_id: xxxx-xxxx52-xxxxxqq
+      job_clusters:
+        - job_cluster_key: Populate_Bronze_Layer_cluster
+          new_cluster:
+            cluster_name: ""
+            spark_version: 15.4.x-scala2.12
+            node_type_id: Standard_D4ds_v5
+            spark_env_vars:
+              PYSPARK_PYTHON: /databricks/python3/bin/python3
+            data_security_mode: LEGACY_SINGLE_USER_STANDARD
+            runtime_engine: STANDARD
+            kind: CLASSIC_PREVIEW
+            is_single_node: true
+      queue:
+        enabled: true
