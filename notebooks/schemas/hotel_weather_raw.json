@@ -1,0 +1,89 @@
+{
+	"type": "struct",
+	"fields": [
+		{
+			"name": "address",
+			"type": "string",
+			"nullable": true,
+			"metadata": {}
+		},
+		{
+			"name": "avg_tmpr_c",
+			"type": "double",
+			"nullable": true,
+			"metadata": {}
+		},
+		{
+			"name": "avg_tmpr_f",
+			"type": "double",
+			"nullable": true,
+			"metadata": {}
+		},
+		{
+			"name": "city",
+			"type": "string",
+			"nullable": true,
+			"metadata": {}
+		},
+		{
+			"name": "country",
+			"type": "string",
+			"nullable": true,
+			"metadata": {}
+		},
+		{
+			"name": "geoHash",
+			"type": "string",
+			"nullable": true,
+			"metadata": {}
+		},
+		{
+			"name": "id",
+			"type": "string",
+			"nullable": true,
+			"metadata": {}
+		},
+		{
+			"name": "latitude",
+			"type": "double",
+			"nullable": true,
+			"metadata": {}
+		},
+		{
+			"name": "longitude",
+			"type": "double",
+			"nullable": true,
+			"metadata": {}
+		},
+		{
+			"name": "name",
+			"type": "string",
+			"nullable": true,
+			"metadata": {}
+		},
+		{
+			"name": "wthr_date",
+			"type": "string",
+			"nullable": true,
+			"metadata": {}
+		},
+		{
+			"name": "year",
+			"type": "integer",
+			"nullable": true,
+			"metadata": {}
+		},
+		{
+			"name": "month",
+			"type": "integer",
+			"nullable": true,
+			"metadata": {}
+		},
+		{
+			"name": "day",
+			"type": "integer",
+			"nullable": true,
+			"metadata": {}
+		}
+	]
+}

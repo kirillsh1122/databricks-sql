@@ -1,17 +1,16 @@
 # Setup azurerm as a state backend
 terraform {
   backend "azurerm" {
-    resource_group_name  = "<RESOURCE_GROUP_NAME>"
-    storage_account_name = "<STORAGE_ACCOUNT_NAME>" # Provide Storage Account name, where Terraform Remote state is stored
-    container_name       = "<CONTAINER_NAME>"
-    key                  = "<STORAGE_ACCOUNT_KEY>"
+    resource_group_name  = "terraform_rg"
+    storage_account_name = "terraformstaccksh01" # Provide Storage Account name, where Terraform Remote state is stored
+    container_name       = "terraformcnt"
+    key                  = "terraform.tfstate"
   }
 }
 
 # Configure the Microsoft Azure Provider
 provider "azurerm" {
   features {}
-  subscription_id = "<SUBSCRIPTION_ID>"
 }
 
 resource "random_string" "suffix" {

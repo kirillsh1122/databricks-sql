@@ -1,0 +1,1 @@
+02_load_bronze_data html is not included since it is a JAR task. Details available only in cluster logs
